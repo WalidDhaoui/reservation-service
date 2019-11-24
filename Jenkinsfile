@@ -23,7 +23,7 @@ pipeline {
 		sh 'sudo mvn dockerfile:push';
             }
         }
-	stage ('Build Package'){
+	stage ('Run Docker Image'){
         steps{
                 sh 'sudo docker run -p 5000:8090 waliddhaoui/reservation-service:0.0.1-SNAPSHOT';
             }
