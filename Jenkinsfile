@@ -8,19 +8,19 @@ pipeline {
         }
         stage('Clean Package') {
             steps{
-                sh 'mvn clean verify';
+                sh 'sudo mvn clean verify';
             }
         }
         stage ('Build Package'){
             steps{
-                sh 'mvn package';
+                sh 'sudo mvn package';
             }
            
         }
         stage ('Create And Publish Docker Image'){
             steps{
-                sh 'mvn package dockerfile:build';
-		            sh 'mvn dockerfile:push';
+                sh 'sudo mvn package dockerfile:build';
+		sh 'sudo mvn dockerfile:push';
             }
         }
 }
