@@ -20,7 +20,6 @@ pipeline {
         stage ('Create And Publish Docker Image'){
             steps{
                 sh 'sudo mvn package dockerfile:build';
-		sh 'sudo mvn dockerfile:push';
             }
         }
 	stage ('Run Docker Image'){
